@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Raporlama</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <div class="max-w-4xl mx-auto mt-10 p-6 bg-white rounded shadow">
+    <div class="flex justify-between items-center mb-6">
+      <h1 class="text-2xl font-bold">📊 Stok Raporu</h1>
+      <a href="/" class="text-blue-500 hover:underline">← Ana Sayfaya Dön</a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <div class="bg-blue-100 p-4 rounded shadow">
+        <p class="text-lg font-semibold">Toplam Ürün Sayısı:</p>
+        <p class="text-3xl">{{ toplam_urun }}</p>
+      </div>
+
+      <div class="bg-green-100 p-4 rounded shadow">
+        <p class="text-lg font-semibold">Toplam Stok Miktarı:</p>
+        <p class="text-3xl">{{ toplam_miktar }}</p>
+      </div>
+
+      <div class="bg-yellow-100 p-4 rounded shadow">
+        <p class="text-lg font-semibold">Toplam Stok Değeri:</p>
+        <p class="text-3xl">₺{{ "%.2f"|format(toplam_deger) }}</p>
+      </div>
+
+      <div class="bg-purple-100 p-4 rounded shadow">
+        <p class="text-lg font-semibold">En Fazla Stoktaki Ürün:</p>
+        <p class="text-xl">{{ en_cok_stokta[0] }} ({{ en_cok_stokta[1] }} adet)</p>
+      </div>
+
+      <div class="bg-red-100 p-4 rounded shadow md:col-span-2">
+        <p class="text-lg font-semibold">En Değerli Ürün (Birim Fiyat):</p>
+        <p class="text-xl">{{ en_pahali_urun[0] }} - ₺{{ "%.2f"|format(en_pahali_urun[1]) }}</p>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
